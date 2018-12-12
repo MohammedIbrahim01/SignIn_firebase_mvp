@@ -10,10 +10,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AuthManager {
 
-    private SignInContract.AuthenticationCallbacks modelCallbacks;
+    private SignInContract.ModelCallbacks modelCallbacks;
     private FirebaseAuth firebaseAuth;
 
-    public AuthManager(SignInContract.AuthenticationCallbacks modelCallbacks) {
+    public AuthManager(SignInContract.ModelCallbacks modelCallbacks) {
 
         this.modelCallbacks = modelCallbacks;
         firebaseAuth = FirebaseAuth.getInstance();

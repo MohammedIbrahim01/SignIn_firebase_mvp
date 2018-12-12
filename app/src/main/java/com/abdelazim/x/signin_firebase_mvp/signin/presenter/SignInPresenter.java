@@ -6,7 +6,7 @@ import com.abdelazim.x.signin_firebase_mvp.Utils.TextUtils;
 import com.abdelazim.x.signin_firebase_mvp.signin.SignInContract;
 import com.abdelazim.x.signin_firebase_mvp.signin.model.SignInModel;
 
-public class SignInPresenter implements SignInContract.presenter, SignInContract.AuthenticationCallbacks, SignInContract.RepositoryCallbacks {
+public class SignInPresenter implements SignInContract.presenter, SignInContract.PresenterCallbacks {
 
     private SignInModel model;
     private SignInContract.View view;

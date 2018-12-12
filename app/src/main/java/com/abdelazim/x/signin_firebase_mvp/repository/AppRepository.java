@@ -7,9 +7,9 @@ public class AppRepository {
 
     private RemoteDatabase remoteDatabase;
 
-    public AppRepository(SignInContract.RepositoryCallbacks repositoryCallbacks) {
+    public AppRepository(SignInContract.ModelCallbacks modelCallbacks) {
 
-        remoteDatabase = new RemoteDatabase(repositoryCallbacks);
+        remoteDatabase = new RemoteDatabase(modelCallbacks);
     }
 
     public void saveDriverInfo(String driverId, String email, String password, String userName, String phoneNumber) {
