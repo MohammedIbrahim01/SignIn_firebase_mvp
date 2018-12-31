@@ -72,8 +72,7 @@ public class SignInPresenter implements SignInContract.presenter, SignInContract
     @Override
     public void getLocationButtonClicked() {
 
-        String location = model.getLocation();
-        view.showToast(location);
+        model.getLocation();
     }
 
     @Override
@@ -106,5 +105,10 @@ public class SignInPresenter implements SignInContract.presenter, SignInContract
     @Override
     public void onSaveDriverFailure() {
         view.showSnackBar("check your internet connection");
+    }
+
+    @Override
+    public void onLocationFetched(String location) {
+        view.showToast(location);
     }
 }

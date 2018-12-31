@@ -16,4 +16,9 @@ public class AppRepository {
 
         remoteDatabase.saveDriverInfo(driverId, email, password, userName, phoneNumber);
     }
+
+    public void getLocation() {
+
+        remoteDatabase.getLocation();
+    }
 }

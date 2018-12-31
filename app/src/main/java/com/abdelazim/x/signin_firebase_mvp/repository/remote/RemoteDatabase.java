@@ -39,4 +39,11 @@ public class RemoteDatabase {
                     }
                 });
     }
+
+    public void getLocation() {
+
+        String location = "123.123";
+
+        presenterCallbacks.onLocationFetched(location);
+    }
 }

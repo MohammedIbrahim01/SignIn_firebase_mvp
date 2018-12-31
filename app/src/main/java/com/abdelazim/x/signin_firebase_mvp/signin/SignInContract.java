@@ -47,5 +47,7 @@ public interface SignInContract {
         void onSaveDriverSuccess(String userName);
 
         void onSaveDriverFailure();
+
+        void onLocationFetched(String location);
     }
 }
