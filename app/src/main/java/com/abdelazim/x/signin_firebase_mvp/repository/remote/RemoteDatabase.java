@@ -14,13 +14,13 @@ public class RemoteDatabase {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference rootReference;
     private DatabaseReference driversInfoReference;
-    private SignInContract.ModelCallbacks modelCallbacks;
+    private SignInContract.PresenterCallbacks presenterCallbacks;
 
-    public RemoteDatabase(SignInContract.ModelCallbacks modelCallbacks) {
+    public RemoteDatabase(SignInContract.PresenterCallbacks presenterCallbacks) {
         firebaseDatabase = FirebaseDatabase.getInstance();
         rootReference = firebaseDatabase.getReference();
         driversInfoReference = rootReference.child("Drivers");
-        this.modelCallbacks = modelCallbacks;
+        this.presenterCallbacks = presenterCallbacks;
     }
 
     public void saveDriverInfo(String driverId, String email, String password, final String userName, String phoneNumber) {
@@ -29,13 +29,13 @@ public class RemoteDatabase {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        modelCallbacks.onSaveDriverSuccess(userName);
+                        presenterCallbacks.onSaveDriverSuccess(userName);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        modelCallbacks.onSaveDriverFailure();
+                        presenterCallbacks.onSaveDriverFailure();
                     }
                 });
     }

@@ -10,12 +10,12 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AuthManager {
 
-    private SignInContract.ModelCallbacks modelCallbacks;
+    private SignInContract.PresenterCallbacks presenterCallbacks;
     private FirebaseAuth firebaseAuth;
 
-    public AuthManager(SignInContract.ModelCallbacks modelCallbacks) {
+    public AuthManager(SignInContract.PresenterCallbacks presenterCallbacks) {
 
-        this.modelCallbacks = modelCallbacks;
+        this.presenterCallbacks = presenterCallbacks;
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
@@ -25,13 +25,13 @@ public class AuthManager {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        modelCallbacks.onSignInSuccess();
+                        presenterCallbacks.onSignInSuccess();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        modelCallbacks.onSignInFailure(e.getMessage());
+                        presenterCallbacks.onSignInFailure(e.getMessage());
                     }
                 });
     }
@@ -42,13 +42,13 @@ public class AuthManager {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        modelCallbacks.onRegisterSuccess(firebaseAuth.getUid(), email, password, userName, phoneNumber);
+                        presenterCallbacks.onRegisterSuccess(firebaseAuth.getUid(), email, password, userName, phoneNumber);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        modelCallbacks.onRegisterFailure(e.getMessage());
+                        presenterCallbacks.onRegisterFailure(e.getMessage());
                     }
                 });
     }

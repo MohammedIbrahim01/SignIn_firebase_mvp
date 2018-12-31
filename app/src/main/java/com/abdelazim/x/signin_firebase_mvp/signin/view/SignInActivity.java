@@ -2,13 +2,12 @@ package com.abdelazim.x.signin_firebase_mvp.signin.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -58,6 +57,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
         signInDialog = getSignInDialog();
         registerDialog = getRegisterDialog();
+
 
         signinButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);

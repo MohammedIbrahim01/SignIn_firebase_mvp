@@ -32,21 +32,6 @@ public interface SignInContract {
         void gotoMapActivity();
     }
 
-    interface ModelCallbacks {
-
-        void onSignInSuccess();
-
-        void onRegisterSuccess(String driverId, String email, String password, String userName, String phoneNumber);
-
-        void onSignInFailure(String failureMessage);
-
-        void onRegisterFailure(String failureMessage);
-
-        void onSaveDriverSuccess(String userName);
-
-        void onSaveDriverFailure();
-    }
-
     interface PresenterCallbacks {
 
         void onSignInSuccess();
