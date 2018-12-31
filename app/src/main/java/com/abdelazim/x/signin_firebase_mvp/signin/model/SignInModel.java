@@ -25,4 +25,9 @@ public class SignInModel {
     public void saveDriverInfo(String driverId, String email, String password, String userName, String phoneNumber) {
         repository.saveDriverInfo(driverId, email, password, userName, phoneNumber);
     }
+
+    public String getLocation() {
+
+        return "123.456.789";
+    }
 }

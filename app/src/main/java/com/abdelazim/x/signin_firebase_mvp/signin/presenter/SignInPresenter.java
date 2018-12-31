@@ -70,6 +70,13 @@ public class SignInPresenter implements SignInContract.presenter, SignInContract
     }
 
     @Override
+    public void getLocationButtonClicked() {
+
+        String location = model.getLocation();
+        view.showToast(location);
+    }
+
+    @Override
     public void onSignInSuccess() {
         view.showToast("signed in");
         view.gotoMapActivity();

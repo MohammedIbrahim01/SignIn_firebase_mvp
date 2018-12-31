@@ -29,6 +29,8 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
     private EditText emailEditTextSi, passwordEditTextSi,
             emailEditTextRe, passwordEditTextRe, userNameEditText, phoneNumberEditText;
 
+    private Button getLocationButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
         rootLinearLayout = findViewById(R.id.root_linearLayout);
         signinButton = findViewById(R.id.signin_button);
         registerButton = findViewById(R.id.register_button);
+        getLocationButton = findViewById(R.id.get_location_button);
 
         signinLayout = LayoutInflater.from(this).inflate(R.layout.signin_dialog_layout, null);
         emailEditTextSi = signinLayout.findViewById(R.id.email_editText_si);
@@ -61,6 +64,7 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
 
         signinButton.setOnClickListener(this);
         registerButton.setOnClickListener(this);
+        getLocationButton.setOnClickListener(this);
     }
 
     @Override
@@ -152,6 +156,9 @@ public class SignInActivity extends AppCompatActivity implements SignInContract.
                 break;
             case R.id.register_button:
                 presenter.registerClicked();
+                break;
+            case R.id.get_location_button:
+                presenter.getLocationButtonClicked();
                 break;
         }
     }

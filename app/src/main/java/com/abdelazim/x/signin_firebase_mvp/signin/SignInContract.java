@@ -15,6 +15,8 @@ public interface SignInContract {
         void dialogRegisterClicked(DialogInterface dialog, String email, String password, String userName, String phoneNumber);
 
         void dialogCancelClicked(DialogInterface dialog);
+
+        void getLocationButtonClicked();
     }
 
     interface View {
